@@ -60,11 +60,6 @@
 \newcommand{\sollsein}{\stackrel{!}{=}}
 
 \begin{document}
-\tableofcontents
-\newpage
-
-\part{Elektrische Energietechnik}
-
 \section{Wechselstromsystem}
 
 \subsection{Effektivwert}
@@ -190,6 +185,7 @@ Für den symmetrischen Fall vereinfacht sich dies zu:
 \begin{pmatrix}\underline{U}_1 \\ \underline{U}_2 \\ \underline{U}_3\end{pmatrix}=\underbrace{(\underline{A}-\underline{B})}_{\underline{Z}_b}\begin{pmatrix}\underline{I}_1 \\ \underline{I}_2 \\ \underline{I}_3\end{pmatrix}
 \end{equation*}
 
+\newpage
 \section{Elektrische Maschinen}
 
 \subsection{Transformator}
@@ -295,6 +291,10 @@ M&=F\cdot r\\
 M&=K_2\cdot\Phi\cdot I_A\\
 K_1&=2\pi K_2\\
 n&=\frac{1}{T}=\frac{v}{2\pi r}\\
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
 n&=\underbrace{\frac{U}{K_1\cdot \Phi}}_{n_0}-\frac{R}{K_1\cdot K_2\cdot\Phi^2}\cdot M\\
 n_0&=\frac{U}{K_1\cdot\Phi}=\frac{U\cdot n}{U_i}=\frac{U\cdot n}{U-R\cdot I_A}\\
 \Omega&=2\pi n=\frac{v}{r}\\
@@ -353,6 +353,7 @@ R_{Vz^*}&=R_{A0}-R_{A1}
 \end{split}
 \end{equation*}
 
+\newpage
 \subsection{Synchronmaschine (SMA)}
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{Grafiken/Synchronmaschine}
@@ -621,7 +622,7 @@ Z_w^*=\frac{U_r^2}{P}
 j\omega C_K=\left(\frac{\underline{Y}_q}{2}\right)^*-\frac{\underline{Y}_q}{2}
 \end{equation*}
 \end{enumerate}
-
+\newpage
 \section{Hochspannungstechnik}
 
 \subsection{Gasdurchschlag}
