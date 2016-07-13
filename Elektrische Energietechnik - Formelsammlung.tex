@@ -37,6 +37,8 @@
 \usepackage{pdfpages}
 \usepackage{fancyhdr}
 
+\renewcommand{\familydefault}{\sfdefault} 
+
 \setlist{itemsep=.01mm}
 \setenumerate{label=\emph{\arabic*})}
 \setlength{\columnsep}{1cm}
@@ -60,7 +62,7 @@
 \newcommand{\sollsein}{\stackrel{!}{=}}
 
 \begin{document}
-\section{Wechselstromsystem}
+\section{Wechselstromsystem (S. 46)}
 
 \subsection{Effektivwert}
 \begin{equation*}
@@ -101,9 +103,9 @@ Blindfaktor
 \sin(\varphi)=\frac{Q}{S}
 \end{equation*}
 
-\subsection{Drehstromsystem}
+\subsection{Drehstromsystem (S. 53)}
 
-\subsubsection{Symmetrisches Drehstromsystem}
+\subsubsection{Symmetrisches Drehstromsystem (S. 54)}
 \begin{equation*}
 \begin{split}
 U_1&=U_2=U_3\\
@@ -114,7 +116,7 @@ U_{12}&=\sqrt{3}\cdot U_1\\
 \end{split}
 \end{equation*}
 
-\subsubsection{Drehoperatoren}
+\subsubsection{Drehoperatoren (S. 56)}
 \begin{equation*}
 \begin{split}
 \underline{a}&=e^{j\frac{2\pi}{3}}\\
@@ -124,7 +126,7 @@ U_{12}&=\sqrt{3}\cdot U_1\\
 \end{split}
 \end{equation*}
 
-\subsubsection{Leistung}
+\subsubsection{Leistung (S. 57)}
 Komplexe Leistung
 \begin{equation*}
 \begin{split}
@@ -140,12 +142,12 @@ Komplexe Wechselleistung
 \end{split}
 \end{equation*}
 
-\subsubsection{Sternschaltung}
+\subsubsection{Sternschaltung (S. 59)}
 \begin{center}
 \includegraphics[width=0.5\columnwidth]{Grafiken/Sternschaltung}
 \end{center}
 
-\subsubsection{Dreieckschaltung}
+\subsubsection{Dreieckschaltung (S. 60)}
 \begin{center}
 \includegraphics[width=0.5\columnwidth]{Grafiken/Dreieckschaltung}
 \end{center}
@@ -184,11 +186,11 @@ Für den symmetrischen Fall vereinfacht sich dies zu:
 \end{equation*}
 
 \newpage
-\section{Elektrische Maschinen}
+\section{Elektrische Maschinen (S. 70)}
 
-\subsection{Transformator}
+\subsection{Transformator (S. 74)}
 
-\subsubsection{Einphasiges ESB eines Transformators}
+\subsubsection{Einphasiges ESB eines Transformators (S. 75)}
 \includegraphics[width=0.9\columnwidth]{Grafiken/Trafo_ESB}\\\\
 \begin{tabular}{ll}
 $\text{ü}=\frac{w_1}{w_2}$ & Übersetzung\\
@@ -217,7 +219,7 @@ Z_k&=\frac{U_k}{I_r}=u_k\cdot\frac{U_{r1T}^2}{S_{rT}}
 \end{split}
 \end{equation*}
 
-\subsubsection{Leerlauf}
+\subsubsection{Leerlauf (S. 76)}
 Im Leerlauf ($\underline{I}_2^x=0$) können der Widerstand $R_1$ und die Streureaktanz $X_{\sigma 1}$ vernachlässigt werden.\\
 Für den Leerlaufstrom ergibt sich dann:
 \begin{equation*}
@@ -242,7 +244,7 @@ $u_k$: & Relative Kurzschlussspannung
 \end{tabular}
 
 
-\subsubsection{Belastung mit Bemessungsstrom}
+\subsubsection{Belastung mit Bemessungsstrom (S. 78)}
 \begin{center}
 \includegraphics[width=0.6\columnwidth]{Grafiken/Trafo_BS_ESB}
 \end{center}
@@ -253,12 +255,12 @@ X_k&=X_{\sigma 1}+X_{\sigma 2}^x
 \end{split}
 \end{equation*}
 
-\subsubsection{Drehstromtransformator}
+\subsubsection{Drehstromtransformator (S. 80)}
 Die Ersatzschaltbilder entsprechen den oben genannten, jedoch müssen die Spannungen durch $\sqrt{3}$ geteilt werden.
 
 \newpage
 
-\subsection{Gleichstrommaschine (GMA)}
+\subsection{Gleichstrommaschine (GMA) (S. 88)}
 \begin{center}
 \includegraphics[width=0.95\columnwidth]{Grafiken/Gleichstrommaschine}
 \end{center}
@@ -272,7 +274,7 @@ $R_V$ & Vorwiderstand\\
 $\Phi$ & Wirksamer magn. Fluss bei el. Erregung
 \end{tabular}
 
-\subsubsection{Grundgleichungen für den stationären Betrieb}
+\subsubsection{Grundgleichungen für den stationären Betrieb (S. 91)}
 \begin{tabular}{ll}
 $K_1,K_2$ & Maschinenkonstanten\\
 $M$ & Drehmoment\\
@@ -304,7 +306,7 @@ P_R&=P_{\text{el}}-P_{\text{mech}}=I_A^2\cdot R
 \end{split}
 \end{equation*}
 
-\subsubsection{GMA mit Fremderregung/Nebenschluss}
+\subsubsection{GMA mit Fremderregung/Nebenschluss (S. 93)}
 \begin{tabular}{ll}
 $a$ & Beschleunigung\\
 $m$ & Masse
@@ -354,7 +356,7 @@ R_{Vz^*}&=R_{A0}-R_{A1}
 \end{equation*}
 
 \newpage
-\subsection{Synchronmaschine (SMA)}
+\subsection{Synchronmaschine (SMA) (S. 100)}
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{Grafiken/Synchronmaschine}
 \end{center}
@@ -404,7 +406,7 @@ $\Rightarrow$ wirkt im Netz wie eine Induktivität\\\\
 \textbf{Phasenschieberbetrieb:}\\
 Im Falle eines Phasenschieberbetriebs gilt: $I_w=0$
 
-\subsection{Asynchronmaschine (AMA)}
+\subsection{Asynchronmaschine (AMA) (S. 113)}
 \begin{center}
 \includegraphics[width=0.9\columnwidth]{Grafiken/Asynchronmaschine}
 \end{center}
@@ -456,9 +458,9 @@ S_{\text{zu}}&=3\cdot I_r^2\cdot Z;\;\;\;Z^2=X_{\sigma}^2+\left(\frac{R_L}{s}\ri
 \end{equation*}
 
 
-\section{Übertragung elektrischer Energie}
+\section{Übertragung elektrischer Energie (S. 121)}
 
-\subsection{Vereinfachte Leitungsbetrachtung}
+\subsection{Vereinfachte Leitungsbetrachtung (S. 128)}
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{Grafiken/Uebertragungsleitung}
 \end{center}
@@ -509,7 +511,7 @@ Gegeben seien $|\underline{U}_1|,|\underline{U}_2|,\vartheta$.
 \item $I_w$ und $I_b$ einzeichnen mit $\underline{I}=I_w+jI_b$
 \end{enumerate}
 
-\subsection{Leitung als Vierpol}
+\subsection{Leitung als Vierpol (S. 134)}
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{Grafiken/Vierpolleitung}
 \end{center}
@@ -539,10 +541,10 @@ Speziell für kurze Leitungen (Freileitung: $l\leq$ 200 km bzw. Kabel: $l\leq 10
 \end{split}
 \end{equation*}
 
-\subsection{Übertragung der natürlichen Leistung}
+\subsection{Übertragung der natürlichen Leistung (S. 136)}
 Natürliche Leistung ist die Leistung, die über eine Leitung übertragen werden kann, wenn sie mit dem Betriebswellenwiderstand $Z_w$ abgeschlossen ist.
 
-\subsubsection{Übertragung der natürlichen Leistung $P_2=P_{\text{nat}}$}
+\subsubsection{Übertragung der natürlichen Leistung $P_2=P_{\text{nat}}$ (S. 136)}
 \begin{equation*}
 \begin{split}
 \underline{I}_2&=\frac{\underline{U}_2}{Z_w}\\
@@ -554,7 +556,7 @@ P_{\text{nat}}&=3\cdot\frac{|\underline{U}_2|^2}{Z_w}=\frac{U_r^2}{Z_w}
 \end{equation*}
 Es wird somit nur Wirkleistung übertragen.
 
-\subsubsection{Übertragung von $P_2<P_{\text{nat}}$}
+\subsubsection{Übertragung von $P_2<P_{\text{nat}}$ (S. 137)}
 $P_2<P_{\text{nat}}\Rightarrow Z_W\uparrow\;\;\;\;\Rightarrow L_b'\uparrow\text{ oder }C_b'\downarrow$\\\\
 Ziel: $|\underline{U}_1|=|\underline{U}_2|,|\underline{I}_1|=|\underline{I}_2|$\\\\
 \textbf{Längskompensation:} $L_b'\uparrow\;\;\;\;\Rightarrow\beta l\uparrow\;\;\;\;\Rightarrow\text{Stabilität }\downarrow$
@@ -591,7 +593,7 @@ Z_w^*=\frac{U_r^2}{P}
 \includegraphics[width=0.85\columnwidth]{Grafiken/Querkompensation_12}
 \end{center}
 
-\subsubsection{Übertragung von $P_2>P_{\text{nat}}$}
+\subsubsection{Übertragung von $P_2>P_{\text{nat}}$ (S. 139)}
 $P_2>P_{\text{nat}}\Rightarrow Z_W\downarrow\;\;\;\;\Rightarrow L_b'\downarrow\text{ oder }C_b'\uparrow$\\\\
 Ziel: $|\underline{U}_1|=|\underline{U}_2|,|\underline{I}_1|=|\underline{I}_2|$\\\\
 \textbf{Längskompensation:} $L_b'\downarrow\;\;\;\;\Rightarrow\beta l\downarrow\;\;\;\;\Rightarrow\text{Stabilität }\uparrow$
@@ -623,7 +625,7 @@ j\omega C_K=\left(\frac{\underline{Y}_q}{2}\right)^*-\frac{\underline{Y}_q}{2}
 \end{equation*}
 \end{enumerate}
 \newpage
-\section{Hochspannungstechnik}
+\section{Hochspannungstechnik (S. 165)}
 
 \subsection{Gasdurchschlag}
 \begin{tabular}{ll}
@@ -651,7 +653,7 @@ $\eta <1$ & Schwach inhomogenes Feld\\
 $\eta <<1$ & Stark inhomogenes Feld
 \end{tabular}
 
-\subsubsection{Homogenes oder schwach inhomogenes Feld}
+\subsubsection{Homogenes oder schwach inhomogenes Feld (S. 166)}
 \begin{equation*}
 \begin{split}
 U^*&<U_i\\
@@ -667,7 +669,7 @@ U_d&=U^*=E_S\cdot s
 \end{split}
 \end{equation*}
 
-\subsection{Lichtbogen}
+\subsection{Lichtbogen (S. 177)}
 
 \subsection{Versuchsaufbau}
 \begin{center}
@@ -682,7 +684,7 @@ $R$ & Vorwiderstand\\
 $U_0$ & Konstante Gleichspannung
 \end{tabular}
 
-\subsection{Kennlinie}
+\subsection{Kennlinie (S. 178)}
 \begin{center}
 \includegraphics[width=0.98\columnwidth]{Grafiken/Lichtbogen}
 \end{center}
@@ -747,7 +749,7 @@ U_0^2+\underbrace{[-2(a+bl)]}_{B}U_0+\underbrace{[a^2+(bl)^2+2abl-4R(C+dl)]}_{C}
 \end{equation*}
 \end{enumerate}
 
-\subsection{Löschung}
+\subsection{Löschung (S. 178)}
 \begin{tabular}{ll}
 $n$ & Anzahl der Teillichtbögen
 \end{tabular}
