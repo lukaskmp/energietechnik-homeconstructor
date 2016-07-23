@@ -64,17 +64,13 @@
 \begin{document}
 \section{Wechselstromsystem (S. 46)}
 
-\subsection{Effektivwert}
+\subsection{Effektivwert und Phasenverschiebungswinkel}
 \begin{equation*}
 \begin{split}
 U_{\text{eff}}&=U=\sqrt{\frac{1}{T}\int\limits_Tu^2(\tau)d\tau}\\
-U&=\frac{\hat{u}}{\sqrt{2}}\text{ für sinusförmige Größen}
+U&=\frac{\hat{u}}{\sqrt{2}}\text{ für sinusförmige Größen}\\
+\varphi&=\varphi_{ui}=\varphi_u-\varphi_i
 \end{split}
-\end{equation*}
-
-\subsection{Phasenverschiebungswinkel}
-\begin{equation*}
-\varphi=\varphi_{ui}=\varphi_u-\varphi_i
 \end{equation*}
 
 \subsection{Elektrische Leistung}
@@ -82,6 +78,7 @@ Komplexe Leistung
 \begin{equation*}
 \underline{S}=\underline{U}\cdot\underline{I}^*=\frac{1}{2}\underline{\hat{u}}\cdot\underline{\hat{i}}^*=P+jQ
 \end{equation*}
+\scalebox{.7}{Verbraucherzählsystem (VZS): $Q>0 \Rightarrow$ induktive Last, $Q<0 \Rightarrow$ kapazitive Last}\\
 Komplexe Wechselleistung
 \begin{equation*}
 \underline{\tilde{S}}=\underline{U}\cdot\underline{I}=\frac{1}{2}\underline{\hat{u}}\cdot\underline{\hat{i}}
@@ -138,9 +135,12 @@ Komplexe Wechselleistung
 \begin{equation*}
 \begin{split}
 \underline{\tilde{S}}&=\underline{U}_1\cdot\underline{I}_1+\underline{U}_2\cdot\underline{I}_2+\underline{U}_3\cdot\underline{I}_3\\
-\underline{\tilde{S}}&=0
+\underline{\tilde{S}}&=0\text{ falls symmetrisch}\\
+p(t)&=\Re\{\underline{S}\}+\Re\{\underline{\tilde{S}}e^{j 2\omega t}\}\text{\quad Momentanwert der Leistung}
 \end{split}
 \end{equation*}
+
+
 
 \subsubsection{Sternschaltung (S. 59)}
 \begin{center}
@@ -161,7 +161,7 @@ Komplexe Wechselleistung
 Für ein symmetrisches System gilt außerdem:
 \begin{equation*}
 \begin{split}
-\underline{I}&=|\underline{I}_1|=|\underline{I}_2|=|\underline{I}_3|\\
+\underline{I}&=\underline{I}_L=|\underline{I}_1|=|\underline{I}_2|=|\underline{I}_3|\\
 I_{\Delta}&=|\underline{I}_{12}|=|\underline{I}_{23}|=|\underline{I}_{31}|\\
 I&=\sqrt{3}\cdot I_{\Delta}\\
 U_{\Delta}&=|\underline{U}_{12}|=|\underline{U}_{23}|=|\underline{U}_{31}|
@@ -186,6 +186,7 @@ Für den symmetrischen Fall vereinfacht sich dies zu:
 \end{equation*}
 
 \newpage
+
 \section{Elektrische Maschinen (S. 70)}
 
 \subsection{Transformator (S. 74)}
@@ -209,13 +210,17 @@ $\underline{U}_2^x=\text{ü}\cdot\underline{U}_2$ & Spannung auf der US-Seite au
 $\underline{I}_1$ & Strom auf der OS-Seite\\
 $\underline{I}_2^x=\frac{\underline{I}_2}{\text{ü}}$ & Strom auf der US-Seite auf OS-Seite\\
 & bezogen\\
-$S_{rT}$ & Bemessungsleistung\\
-$U_{r1T}$ & Außenleiter-Bemessungsspannung
+$S_{rT}$ & Bemessungsleistung (gesamt)\\
+$U_{r1T}$ & Außenleiter-Bemessungsspannung\\\\
+$U_r=\frac{U_{r1T}}{\sqrt{3}}$ & Bemessungsspannung\\
+$I_r$ & Bemessungsstrom (Leiterstrom)\\
+$Z_r$ & Bemessungsimpedanz
 \end{tabular}
 \begin{equation*}
 \begin{split}
-S_{rT}&=\sqrt{3}\cdot U_{r1T}\cdot I_r\\
-Z_k&=\frac{U_k}{I_r}=u_k\cdot\frac{U_{r1T}^2}{S_{rT}}
+S_{rT}&=\sqrt{3}\cdot U_{r1T}\cdot I_r=\frac{U_{rT}^2}{Z_{r}}\\
+I_r&=\frac{S_{rT}}{\sqrt{3}\cdot U_{r1T}}\\
+Z_r&=\frac{U_r}{I_r}
 \end{split}
 \end{equation*}
 
@@ -226,37 +231,50 @@ Für den Leerlaufstrom ergibt sich dann:
 I_{10}=\sqrt{I_{m0}^2+I_{w0}^2}\;\;\;\text{ mit }\underline{I}_{m0}=\underline{I}_h=\frac{\underline{U}_1}{jX_h}
 \end{equation*}
 
-\subsubsection{Dauerkurzschluss}
+\pagebreak
+
+\subsubsection{Dauerkurzschluss (S. 77)}
 \begin{center}
 \includegraphics[width=0.6\columnwidth]{Grafiken/Trafo_KS_ESB}
 \end{center}
+\begin{tabular}{ll}
+	$U_k$ & Kurzschlussspannung ($U_1$ bei Bemessungsstrom $I_1=I_r$)\\
+	$U_{kT}$ & Kurzschlussspannung (Außenleiterspannung bei\\
+	& Bemessungsstrom)\\
+	$U_r$ & Bemessungsspannung (Leiter-Erde-Spannung)\\
+	$Z_k$ & Kurzschlussimpedanz \\
+	$u_k$ & Bezogene Kurzschlussspannung (relativ)\\
+	$z_k$ & Bezogene Bemessungsimpedanz (relativ)
+\end{tabular}
 \begin{equation*}
 \begin{split}
-u_k&=\frac{U_k}{U_r}=\frac{U_{kT}}{U_{r1T}}
+Z_k&=\frac{U_k}{I_r}=u_k\cdot\frac{U_{r1T}^2}{S_{rT}}\\
+u_k&=\frac{U_k}{U_r}=\frac{U_{kT}}{U_{r1T}}=Z_k\cdot\frac{I_r}{U_r}=\frac{Z_k}{Z_r}=z_k\\
 \end{split}
 \end{equation*}
-\begin{tabular}{ll}
-$U_k$: & Kurzschlussspannung ($=U_1$ bei Bemessungsstrom)\\
-$U_{kT}$: & Kurzschlussspannung (Außenleiterspannung bei\\
-& Bemessungsstrom)\\
-$U_r$: & Bemessungsspannung (Leiter-Erde-Spannung)\\
-$u_k$: & Relative Kurzschlussspannung
-\end{tabular}
 
 
 \subsubsection{Belastung mit Bemessungsstrom (S. 78)}
 \begin{center}
 \includegraphics[width=0.6\columnwidth]{Grafiken/Trafo_BS_ESB}
 \end{center}
+\begin{tabular}{ll}
+	$X_k$ & Kurzschlussreaktanz\\
+	$R_k$ & Widerstand entsprechend dem Realteil der\\
+	& Kurzschlussimpedanz\\
+	$\underline{Z}_k$ & Kurzschlussimpedanz (Längsimpedanz)\\
+	$u_x$ & Relativer Streuspannungsabfall\\
+	$u_r$ & Relativer ohmscher Spannungsabfall
+\end{tabular}
 \begin{equation*}
 \begin{split}
-R_k&=R_1+R_2^x\\
-X_k&=X_{\sigma 1}+X_{\sigma 2}^x
+R_k&=R_1+R_2^x= P_{Cu}\cdot\left(\frac{U_{r1T}}{S_{rT}}\right)^2\\
+X_k&=X_{\sigma 1}+X_{\sigma 2}^x\\
+\underline{Z}_k&=R_k+jX_k\\
+u_x&=X_k\cdot\frac{S_{rT}}{U_{r1T}^2}\text{ mit } X_k=\sqrt{Z_k^2-R_k^2}\\
+u_r&=R_k\cdot\frac{S_{rT}}{U_{r1T}^2} \Longleftrightarrow R_k=u_r\cdot\frac{U_{r1T}^2}{S_{rT}}
 \end{split}
 \end{equation*}
-
-\subsubsection{Drehstromtransformator (S. 80)}
-Die Ersatzschaltbilder entsprechen den oben genannten, jedoch müssen die Spannungen durch $\sqrt{3}$ geteilt werden.
 
 \newpage
 
@@ -270,7 +288,7 @@ $U_i$ & Im Anker induzierte Spannung\\
 $I_A$ & Ankerstrom\\
 $I_E$ & Erregerstrom\\
 $R_A$ & Widerstand des Ankerkreises\\
-$R_V$ & Vorwiderstand\\
+$R_V$ & Vorwiderstand ($=0$ bei Bemessungsbetrieb)\\
 $\Phi$ & Wirksamer magn. Fluss bei el. Erregung
 \end{tabular}
 
@@ -286,23 +304,20 @@ $\Omega$ & Winkelgeschwindigkeit
 \end{tabular}
 \begin{equation*}
 \begin{split}
-R&=R_A+R_V\\
+R&=R_A+R_V \\
 U&=U_i+R\cdot I_A=U_i+(R_A+R_V)I_A\\
 U_i&=K_1\cdot\Phi\cdot n\\
 M&=F\cdot r\\
 M&=K_2\cdot\Phi\cdot I_A\\
 K_1&=2\pi K_2\\
 n&=\frac{1}{T}=\frac{v}{2\pi r}\\
-\end{split}
-\end{equation*}
-\begin{equation*}
-\begin{split}
 n&=\underbrace{\frac{U}{K_1\cdot \Phi}}_{n_0}-\frac{R}{K_1\cdot K_2\cdot\Phi^2}\cdot M\\
+&\quad \scalebox{.75}{($U=0$ beim Bremsbetrieb})\\
 n_0&=\frac{U}{K_1\cdot\Phi}=\frac{U\cdot n}{U_i}=\frac{U\cdot n}{U-R\cdot I_A}\\
 \Omega&=2\pi n=\frac{v}{r}\\
 P_{\text{mech}}&=M\cdot\Omega=F\cdot v=U_i\cdot I_A=P_{\text{el,A}}\\
 P_{\text{el}}&=U\cdot I_A\\
-P_R&=P_{\text{el}}-P_{\text{mech}}=I_A^2\cdot R
+P_R&=P_{\text{el}}-P_{\text{mech}}=I_A^2\cdot R\\
 \end{split}
 \end{equation*}
 
@@ -346,6 +361,11 @@ R_{Vz^*}&=R_{A0}-R_{A1}
 \end{split}
 \end{equation*}
 \end{enumerate}
+\textbf{Aufbaubeispiel mit $z^*=6$}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Grafiken/Gleichstrommaschine_Vorwiderstand}
+\end{center}
+
 
 \subsubsection{Wirkungsgrad}
 \begin{equation*}
@@ -356,10 +376,13 @@ R_{Vz^*}&=R_{A0}-R_{A1}
 \end{equation*}
 
 \newpage
+
 \subsection{Synchronmaschine (SMA) (S. 100)}
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{Grafiken/Synchronmaschine}
 \end{center}
+\vspace{0pt}
+Genaueres ESB: $R$ in Reihe zu $jX_d$\\\\
 \begin{tabular}{ll}
 $U$ & Klemmenspannung\\
 $U_r$ & Bemessungsspannung (Außenleiterspannung)\\
@@ -377,13 +400,16 @@ $n$ & Synchrone Drehzahl\\
 $p$ & Anzahl der Polpaare\\
 $\vartheta_M$ & Maschinenwinkel\\
 $\omega$ & Winkelgeschwindigkeit der Spannung\\
-$\Omega$ & Mechanische Winkelgeschwindigkeit
+$\Omega$ & Mechanische Winkelgeschwindigkeit\\
+$\eta_s$ & Wirkungsgrad
 \end{tabular}
 \begin{equation*}
 \begin{split}
 S_r&=\sqrt{3}\cdot U_r\cdot I_r\\
 P&=S_r\cdot cos(\varphi)=3\cdot U\cdot I_w=\frac{3\cdot U\cdot U_P}{X_d}\cdot sin(\vartheta_M)\\
 P_T&=P+P_{VS}+P_{VE}\\
+P&=\eta_s\cdot P_T\\
+P_{VS}+P_{VE}&=(1-\eta_s)\cdot P_T=\left(\frac{1}{\eta_s}-1\right)\cdot P\\
 x_d&=\frac{X_d}{Z_r}=\frac{\sqrt{3}\cdot X_d\cdot I_r}{U_r}\\
 n&=\frac{f}{p}\\
 \underline{U}&=\frac{\underline{U_r}}{\sqrt{3}}=\underline{U}_p-jX_d\underline{I}\\
@@ -395,14 +421,12 @@ I_b&=I_r\cdot sin(\varphi)
 \end{equation*}
 \textbf{Übererregter Synchrongenerator:}
 \begin{equation*}
-\underline{I}=I_w-jI_b
+\underline{I}=I_w-jI_ b \Rightarrow \text{ wirkt im Netz wie eine Kapazität}
 \end{equation*}
-$\Rightarrow$ wirkt im Netz wie eine Kapazität\\\\
 \textbf{Untererregter Synchrongenerator:}
 \begin{equation*}
-\underline{I}=I_w+jI_b
+\underline{I}=I_w+jI_b \Rightarrow \text{ wirkt im Netz wie eine Induktivität}
 \end{equation*}
-$\Rightarrow$ wirkt im Netz wie eine Induktivität\\\\
 \textbf{Phasenschieberbetrieb:}\\
 Im Falle eines Phasenschieberbetriebs gilt: $I_w=0$
 
@@ -443,7 +467,7 @@ s_k&=\frac{R_L}{X_{\sigma}}\\
 f_{SL}&=s\cdot f_0\\
 P_r&=2\pi\cdot n_r\cdot M_r\\
 M&=\frac{2M_K\cdot s_k\cdot s}{s_k^2+s^2}\;\;\;\;\text{(Kloss'sche Gleichung)}\\
-M_k&=\frac{M_r\cdot\left(s_k^2+s_r^2\right)}{2\cdot s_k\cdot s_r}=\frac{3p\cdot U_1^2}{2\omega\cdot X_{\sigma}}=\frac{3p\cdot U_1^2}{8\pi^2\cdot L_{\sigma}\cdot f_1^2}\\
+M_K&=\frac{M_r\cdot\left(s_k^2+s_r^2\right)}{2\cdot s_k\cdot s_r}=\frac{3p\cdot U_1^2}{2\omega\cdot X_{\sigma}}=\frac{3p\cdot U_1^2}{8\pi^2\cdot L_{\sigma}\cdot f_1^2}\\
 M_{\text{an}}&=\frac{2M_K\cdot s_k}{s_k^2+1};\;\;\;\;(n=0\rightarrow s=1)\\
 \eta&=\frac{P_{\text{ab}}}{P_{\text{zu}}}=(1-s)\\
 P_{\text{Verl}}&=P_{\text{zu}}-P_{\text{ab}}\\
@@ -457,6 +481,7 @@ S_{\text{zu}}&=3\cdot I_r^2\cdot Z;\;\;\;Z^2=X_{\sigma}^2+\left(\frac{R_L}{s}\ri
 \end{split}
 \end{equation*}
 
+\newpage
 
 \section{Übertragung elektrischer Energie (S. 121)}
 
@@ -476,10 +501,12 @@ d\underline{U}&=\underline{U}_1-\underline{U}_2=\Delta U+j\delta U\\
 \underline{U}_2&=|\underline{U}_2|\cdot e^{j\varphi}\Rightarrow \underline{U}_1=|\underline{U}_1|\cdot e^{j(\varphi+\vartheta)}\\
 tan(\vartheta)&=\frac{\delta U}{\Delta U+|\underline{U}_2|}\\
 sin(\vartheta)&=\frac{\delta U}{|\underline{U}_1|}\\
+\underline{S}_1&=3\cdot\underline{U}_1\cdot\underline{I}^*\\
+\underline{S}_2&=3\cdot\underline{U}_2\cdot\underline{I}^*\\
 P_1&=3\cdot|\underline{U}_1|\cdot |\underline{I}|\cdot cos(\varphi_{U_1I})=3\cdot |\underline{U}_1|\cdot I_w\\
 P_2&=3\cdot|\underline{U}_2|\cdot |\underline{I}|\cdot cos(\varphi_{U_2I})=3\cdot |\underline{U}_2|\cdot I_w\\
 Q_1&=3\cdot|\underline{U}_1|\cdot |\underline{I}|\cdot sin(\varphi_{U_1I})=3\cdot |\underline{U}_1|\cdot I_b\\
-Q_2&=3\cdot|\underline{U}_2|\cdot |\underline{I}|\cdot sin(\varphi_{U_2I})=3\cdot |\underline{U}_2|\cdot I_b\\
+Q_2&=3\cdot|\underline{U}_2|\cdot |\underline{I}|\cdot sin(\varphi_{U_2I})=\underbrace{3\cdot |\underline{U}_2|\cdot I_b}_{\text{falls } \varphi_{U_{1/2}}\approx 0}\\
 P_{\text{Ltg}}&=P_1-P_2=3|\underline{I}|^2\cdot R\\
 Q_{\text{Ltg}}&=Q_1-Q_2=3|\underline{I}|^2\cdot \omega L_b
 \end{split}
@@ -541,10 +568,12 @@ Speziell für kurze Leitungen (Freileitung: $l\leq$ 200 km bzw. Kabel: $l\leq 10
 \end{split}
 \end{equation*}
 
+\newpage
+
 \subsection{Übertragung der natürlichen Leistung (S. 136)}
 Natürliche Leistung ist die Leistung, die über eine Leitung übertragen werden kann, wenn sie mit dem Betriebswellenwiderstand $Z_w$ abgeschlossen ist.
 
-\subsubsection{Übertragung der natürlichen Leistung $P_2=P_{\text{nat}}$ (S. 136)}
+\subsubsection{Übertragung der natürlichen Leistung $P_2=P_{\text{nat}}$ }
 \begin{equation*}
 \begin{split}
 \underline{I}_2&=\frac{\underline{U}_2}{Z_w}\\
@@ -571,14 +600,8 @@ Ziel: $|\underline{U}_1|=|\underline{U}_2|,|\underline{I}_1|=|\underline{I}_2|$\
 \end{center}
 Vorgehensweise zum Berechnen von $L_K$:
 \begin{enumerate}
-\item Berechne
-\begin{equation*}
-Z_w^*=\frac{U_r^2}{P}
-\end{equation*}
-\item Berechne
-\begin{equation*}
-(\beta l)^*=arcsin\left(\frac{\underline{Z}_l}{jZ_w^*}\right)
-\end{equation*}
+\item Berechne \quad $Z_w^*=\frac{U_r^2}{P}$
+\item Berechne \quad $(\beta l)^*=arcsin\left(\frac{\underline{Z}_l}{jZ_w^*}\right)$
 \item Berechne
 \begin{equation*}
 \left(\frac{\underline{Y}_q}{2}\right)^*=\frac{cos\left((\beta l)^*\right)-1}{\underline{Z}_l}
@@ -592,7 +615,10 @@ Z_w^*=\frac{U_r^2}{P}
 \begin{center}
 \includegraphics[width=0.85\columnwidth]{Grafiken/Querkompensation_12}
 \end{center}
-
+\textbf{Beispiel: Lehrlauf am Leitungsende ($I_2=0$)}\\
+$\Rightarrow \underline{I}_{ZL}=\underline{I}_C+\underline{I}_{LK}\overset{!}{=}0$\\
+$\Rightarrow \underline{U}_2\cdot\frac{\underline{Y}_q}{2} + \underline{U}_2\cdot\frac{1}{j\omega L_K}=0$\\
+$\Rightarrow \omega L_k=j\cdot\frac{2}{\underline{Y}_q}$
 \subsubsection{Übertragung von $P_2>P_{\text{nat}}$ (S. 139)}
 $P_2>P_{\text{nat}}\Rightarrow Z_W\downarrow\;\;\;\;\Rightarrow L_b'\downarrow\text{ oder }C_b'\uparrow$\\\\
 Ziel: $|\underline{U}_1|=|\underline{U}_2|,|\underline{I}_1|=|\underline{I}_2|$\\\\
@@ -624,7 +650,9 @@ Z_w^*=\frac{U_r^2}{P}
 j\omega C_K=\left(\frac{\underline{Y}_q}{2}\right)^*-\frac{\underline{Y}_q}{2}
 \end{equation*}
 \end{enumerate}
+
 \newpage
+
 \section{Hochspannungstechnik (S. 165)}
 
 \subsection{Gasdurchschlag}
@@ -635,7 +663,8 @@ $E_S$ & Spezifischer Spannungsbedarf einer Streamerentladung\\
 $U^*$ & Spannungsbedarf der Streamerentladung\\
 $U_i$ & TE-Einsetzspannung\\
 $\eta$ & Homogenitätsgrad\\
-$s$ & Elektrodenabstand
+$s$ & Elektrodenabstand\\
+$U_d$ & Durchschlagsspannung
 \end{tabular}
 \begin{equation*}
 \begin{split}
@@ -688,8 +717,12 @@ $U_0$ & Konstante Gleichspannung
 \begin{center}
 \includegraphics[width=0.98\columnwidth]{Grafiken/Lichtbogen}
 \end{center}
+Damit ein Lichtbogen stabil brennen kann, muss die dem Bogen zugeführte Energie $U_B\cdot I$ gleich der abgegebenen Wärmeenergie sein.
 \begin{equation*}
-n\cdot U_B>U_{\text{Netz}}\;\;\;\;\text{(Löschbedingung)}\\
+\begin{split}
+P_\text{Wärme}&=U_B\cdot I\\
+U_B&=U_0-R\cdot I
+\end{split}
 \end{equation*}
 \begin{enumerate}[label=$\bullet$]
 \item Instabiler AP:
@@ -699,16 +732,21 @@ $\rightarrow$ erhöhter Spannungsbedarf\\
 (kann nicht aus Schaltung gedeckt werden)\\
 $\rightarrow$ Lichtbogen erlischt
 \item Auslenkung nach rechts:\\
-$\rightarrow$ Strom wird größer\\
+$\rightarrow$ Temperatur- und Leitfähigkeitserhöhung\\
+$\rightarrow$ Spannungsbedarf des Lichtbogens wird als die durch äußere Beschaltung zur Verfügung gestellte Spannung\\
+$\rightarrow$ Strom durch Lichtbogen wird größer\\
 $\rightarrow$ Lichtbogen läuft in den stabilen AP
 \end{enumerate}
 \item Stabiler AP:
 \begin{enumerate}[label=-]
 \item Auslenkung nach rechts:\\
-$\rightarrow$ Strom wird kleiner\\
+$\rightarrow$ Spannungsbedarf des Lichtbogen steigt, kann aus der äußeren Beschaltung nicht gedeckt werden\\
+$\rightarrow$ Strom im Lichtbogen wird kleiner\\
 $\rightarrow$ Lichtbogen läuft in den stabilen AP zurück
 \end{enumerate}
 \end{enumerate}
+
+\newpage
 
 \subsubsection{Ayrton-Gleichung}
 \begin{tabular}{ll}
@@ -721,7 +759,8 @@ $n$ & Anzahl der Teillichtbögen
 n\cdot U_B&>U_{\text{max}}\;\;\;\;\text{(Löschbedingung)}\\
 U_B&=a+b\cdot l+\frac{c+d\cdot l}{I}=U_0-R\cdot I\\
 \Rightarrow l&=\frac{U_B-a-\frac{c}{I}}{b+\frac{d}{I}}\\
-\Rightarrow I_{1,2}&=\frac{-(a+bl-U_0)\pm\sqrt{(a+bl-U_0)^2-4R(c+dl)}}{2R}
+\Rightarrow I_{1,2}&=\frac{-(a+bl-U_0)\pm\sqrt{(a+bl-U_0)^2-4R(c+dl)}}{2R}\\
+I_{\text{stab}}&=\max\{I_1,I_2\}
 \end{split}
 \end{equation*}\\\\
 Für $R_{\text{max}}, U_{0_{\text{min}}}$ und $l_{\text{max}}$ muss die Diskriminante gleich Null gesetzt werden:
@@ -735,7 +774,7 @@ Für $R_{\text{max}}, U_{0_{\text{min}}}$ und $l_{\text{max}}$ muss die Diskrimi
 \end{equation*}
 \item $U_{0_{\text{min}}}$:
 \begin{equation*}
-U_0^2+\underbrace{[-2(a+bl)]}_{B}U_0+\underbrace{[a^2+(bl)^2+2abl-4R(C+dl)]}_{C}=0
+U_0^2+\underbrace{[-2(a+bl)]}_{B}U_0+\underbrace{[a^2+(bl)^2+2abl-4R(c+dl)]}_{C}=0
 \end{equation*}
 \begin{equation*}
 \Rightarrow U_{0\text{min}_{1/2}}=\frac{-B\pm\sqrt{B^2-4C}}{2}
