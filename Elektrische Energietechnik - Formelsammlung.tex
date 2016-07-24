@@ -36,6 +36,7 @@
 \usepackage{amssymb}
 \usepackage{pdfpages}
 \usepackage{fancyhdr}
+\usepackage{siunitx}
 
 \renewcommand{\familydefault}{\sfdefault} 
 
@@ -289,18 +290,19 @@ $I_A$ & Ankerstrom\\
 $I_E$ & Erregerstrom\\
 $R_A$ & Widerstand des Ankerkreises\\
 $R_V$ & Vorwiderstand ($=0$ bei Bemessungsbetrieb)\\
-$\Phi$ & Wirksamer magn. Fluss bei el. Erregung
+$\Phi$ & Wirksamer magn. Fluss bei el. Erregung $[\Phi]=\si{Wb=Vs}$ 
 \end{tabular}
 
 \subsubsection{Grundgleichungen für den stationären Betrieb (S. 91)}
 \begin{tabular}{ll}
-$K_1,K_2$ & Maschinenkonstanten\\
+$K_1,K_2$ & Maschinenkonstanten (einheitslos)\\
 $M$ & Drehmoment\\
 $n$ & Drehzahl\\
 $n_0$ & Leerlaufdrehzahl\\
 $v$ & Geschwindigkeit\\
 $r$ & Radius\\
-$\Omega$ & Winkelgeschwindigkeit
+$\Omega$ & Winkelgeschwindigkeit\\
+$\eta$ & Wirkungsgrad
 \end{tabular}
 \begin{equation*}
 \begin{split}
@@ -318,6 +320,7 @@ n_0&=\frac{U}{K_1\cdot\Phi}=\frac{U\cdot n}{U_i}=\frac{U\cdot n}{U-R\cdot I_A}\\
 P_{\text{mech}}&=M\cdot\Omega=F\cdot v=U_i\cdot I_A=P_{\text{el,A}}\\
 P_{\text{el}}&=U\cdot I_A\\
 P_R&=P_{\text{el}}-P_{\text{mech}}=I_A^2\cdot R\\
+\eta&=\frac{P_\text{mech}}{P_\text{el}}
 \end{split}
 \end{equation*}
 
@@ -361,7 +364,7 @@ R_{Vz^*}&=R_{A0}-R_{A1}
 \end{split}
 \end{equation*}
 \end{enumerate}
-\textbf{Aufbaubeispiel mit $z^*=6$}
+\textbf{Beispielaufbau mit $z^*=6$}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{Grafiken/Gleichstrommaschine_Vorwiderstand}
 \end{center}
@@ -495,6 +498,7 @@ Für Hoch- und Mittelspannungsleitungen wird i.d.R. der ohmsche Längwiderstand 
 \begin{split}
 \omega L_b&=\omega L_b'\cdot l\\
 R&=R'\cdot l\\
+U_1&=|\underline{U}_1|=\frac{U_n}{\sqrt{3}}\\
 d\underline{U}&=\underline{U}_1-\underline{U}_2=\Delta U+j\delta U\\
 \Delta U&=Re\{d\underline{U}\}\\
 \delta U&=Im\{d\underline{U}\}\\
@@ -616,7 +620,7 @@ Vorgehensweise zum Berechnen von $L_K$:
 \includegraphics[width=0.85\columnwidth]{Grafiken/Querkompensation_12}
 \end{center}
 \textbf{Beispiel: Lehrlauf am Leitungsende ($I_2=0$)}\\
-$\Rightarrow \underline{I}_{ZL}=\underline{I}_C+\underline{I}_{LK}\overset{!}{=}0$\\
+$\Rightarrow \underline{I}_{ZL}=\underline{I}_C+\underline{I}_{LK}\sollsein 0$\\
 $\Rightarrow \underline{U}_2\cdot\frac{\underline{Y}_q}{2} + \underline{U}_2\cdot\frac{1}{j\omega L_K}=0$\\
 $\Rightarrow \omega L_k=j\cdot\frac{2}{\underline{Y}_q}$
 \subsubsection{Übertragung von $P_2>P_{\text{nat}}$ (S. 139)}
